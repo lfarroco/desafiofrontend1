@@ -1,0 +1,20 @@
+{
+  "name": "Desafio Front End",
+  "description": "Submissão de Leonardo Farroco para o Desafio Front End",
+  "main": "dist/index.html",
+  "authors": [
+    "Leonardo Farroco @lfarroco"
+  ],
+  "license": "MIT",
+  "keywords": [],
+  "homepage": "https://github.com/lfarroco/desafiofrontend1",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
