@@ -3,6 +3,7 @@
 html,body{
 	margin: 0;
 	padding: 0;
+	font-family: verdana, sans-serif;
 }
 
 .wrapper{
@@ -33,12 +34,12 @@ html,body{
 	width: 50%;	
 }
 
-.three{
-	width: 25%;	
+.four{
+	width: 33%;
 }
 
-.four{
-	width: 33.33%;
+.three{
+	width: 25%;	
 }
 
 .two{
@@ -67,7 +68,7 @@ html,body{
 
 header{
 	padding: 10px 0;
-	background: #ccc;	
+	background: #d93732;
 }
 
 header img{
@@ -88,6 +89,13 @@ header nav li{
 	display: inline;	
 	margin-right: 10px;	
 }
+
+header nav a{
+	color: #fff;
+	text-transform: uppercase;
+}
+
+/* slider */
 
 #slider{
 	position: relative;
@@ -123,6 +131,8 @@ header nav li{
 	right: 0;
 }
 
+/* feature */
+
 #features{	
 	min-height: 200px;
 	background: #fff;
@@ -130,29 +140,52 @@ header nav li{
 }
 
 #features .feature{
-	padding: 10px 0;
-	background: #888;
+	background: #d93732;
+	padding: 0;
 	margin-bottom: 10px;
-	display: table;
+	display: inline-block;
 	clear: both;
+	position: relative;
+}
+
+#features .pic{
+	width: 25%;
+	float:left;	
+	margin-right: 30px;
+}
+
+#features .desc{
+	width: 65%;
+	float:left;
+	color: #fff;
+}
+
+#features a{
+	position: absolute;
+	right: 0;
+	top:0;
+	height: 100%;
+	background: #e94347;
+	width: 3%;
 }
 
 #features h2{	
-	margin: 0;
+	margin: 10px 0 0 0;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 14px;
 	color: #fff;
 }
+
+#features p{
+	font-size: 12px;
+}
+
+/* rodapé */
 
 footer{
 	min-height: 200px;
 	background: #ccc;	
 }
-
-/* feature */
-
-
-
 
 /* tipografia */
 

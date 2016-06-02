@@ -15,10 +15,10 @@
 			console.log(noticia["Título"]);
 			
 			out += '<div class="feature row"> '+
-						'<div class="pic col four">'+
-							'<img src="img/news/'+noticia.Foto+'" />'+
-						'</div>'+						
-						'<div class="news col six">'+
+						
+						'<img class="pic" src="img/news/'+noticia.Foto+'" />'+
+						
+						'<div class="desc">'+
 							'<h2>'+noticia["Título"]+'</h2>'+
 							'<p>'+noticia.Texto+'</p>'+
 						'</div>'+						
