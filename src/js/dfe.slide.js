@@ -1,16 +1,6 @@
-/*
-
-dfe = Desafio Front End 
-
-*/
-
 (function(){
 
 	'use strict';
-
-	var dfe = {};
-
-	//slide
 
 	dfe.slide = {
 		
@@ -34,7 +24,7 @@ dfe = Desafio Front End
 			else
 				first = '';
 			
-			output += '<img class="'+first+'" src="Arquivos/imagens/slide/'+img+'" />';
+			output += '<img class="'+first+'" src="img/slide/'+img+'" />';
 			
 		});
 		
@@ -102,7 +92,7 @@ dfe = Desafio Front End
 
 	dfe.slide.start = function(){
 			
-		$.getJSON('Arquivos/JSON/slide.json',function(res){
+		$.getJSON('json/slide.json',function(res){
 			
 			dfe.slide.imgs = res[0].imagens;
 			dfe.slide.length = dfe.slide.imgs.length;	
@@ -117,82 +107,5 @@ dfe = Desafio Front End
 			
 		});
 	}
-
-	//features
-
-	dfe.features = {};
-
-	dfe.features.printEditoria = function(index){
-		
-		var out = '';
-		
-		console.log(index);
-			
-		dfe.features.editorias[ index ]["Notícias"].forEach(function(noticia){
-			
-			console.log(noticia["Título"]);
-			
-			out += '<div class="feature row"> '+
-						'<div class="pic col four">'+
-							'<img src="Arquivos/Imagens/Notícias/'+noticia.Foto+'" />'+
-						'</div>'+
-						
-						'<div class="news col six">'+
-							'<h2>'+noticia["Título"]+'</h2>'+
-							'<p>'+noticia.Texto+'</p>'+
-						'</div>'+
-						
-						'<a href="#" class="float-right"> > </a>'+
-					'</div>';
-			
-		});
-		
-		$('#feature-list').html( '' );
-		$('#feature-list').html( out );
-		
-	}
-
-	dfe.features.start = function(){
-		
-		$.getJSON('Arquivos/JSON/noticias.json',function(res){
-			
-			dfe.features.editorias = res[0].Editorias;
-			
-			//imprimir primeira editoria da lista
-			dfe.features.printEditoria(0);
-			
-			//povoar select
-			
-			var options = '<option value="" disabled selected>EDITORIAS</option>';
-			var index = 0;
-			
-			dfe.features.editorias.forEach(function(editoria){
-				
-				var name = editoria.Editoria;
-				
-				options += '<option value="'+index+'">'+name+'</option>';
-				
-				index++;
-				
-			});
-			
-			$('#editorias').html( options );
-			
-			$('#editorias').change( function(){
-				
-				dfe.features.printEditoria( $(this).val() );
-				
-				
-			});
-			
-			
-			
-		});
-		
-	}
-
-	//levantar app
-	dfe.slide.start();
-	dfe.features.start();
 	
 })();
