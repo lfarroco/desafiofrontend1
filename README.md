@@ -3,9 +3,11 @@ Projeto elaborado com o mínimo de ferramentas possíveis, buscando um código m
 
 ## Visualização
 
-Para visualizar a versão pronta do projeto basta abrir o [index.html](dist/index.html) - não é necessário levantar um servidor.
+Para visualizar a versão pronta do projeto basta clonar o repositório e abrir o [index.html](dist/index.html) na pasta `dist`, onde os arquivo já estão pré-compilados - não é necessário levantar um servidor.
 
 ## Desenvolvimento
+
+Instale as dependências com `npm install`.
 
 O projeto possui uma tarefa de `watch` do Grunt:
 
