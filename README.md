@@ -7,8 +7,8 @@ Para visualizar a versão pronta do projeto basta clonar o repositório e abrir 
 
 ## Desenvolvimento
 
-Instale as dependências com `npm install`.
+Você precisar ter o `npm` e o `bower` disponível em seu ambiente de desenvolvimento. Instale as dependências com `npm install`.
 
 Para dar build em uma nova versão, rode `grunt build`.  
 
-Para executar o lint e compilar os arquivos automaticamente em caso de mudança, rode `grunt watch`. Alterar qualquer arquivo na pasta src vai recompilar os arquivos js e css.
+Para executar o lint e compilar os arquivos automaticamente, rode `grunt watch`. Alterar qualquer arquivo na pasta src vai recompilar os arquivos js e css.
