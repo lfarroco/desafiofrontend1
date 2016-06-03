@@ -30,7 +30,7 @@
 		$('#feature-list').html( '' );
 		$('#feature-list').html( out );
 		
-	}
+	};
 
 	dfe.features.start = function(){
 		
@@ -66,6 +66,6 @@
 			
 		});
 		
-	}
+	};
 	
 })();

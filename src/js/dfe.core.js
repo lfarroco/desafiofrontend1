@@ -8,7 +8,7 @@ dfe = Desafio Front End
 
 	'use strict';
 
-	window['dfe'] = {
+	window.dfe = {
 		
 		start : function(){
 			

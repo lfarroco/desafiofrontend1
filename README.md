@@ -9,8 +9,6 @@ Para visualizar a versão pronta do projeto basta clonar o repositório e abrir 
 
 Instale as dependências com `npm install`.
 
-O projeto possui uma tarefa de `watch` do Grunt:
+Para dar build em uma nova versão, rode `grunt build`.  
 
-`grunt watch`
-
-Alterar qualquer arquivo na pasta src vai recompilar os arquivos js e css.
+Para executar o lint e compilar os arquivos automaticamente em caso de mudança, rode `grunt watch`. Alterar qualquer arquivo na pasta src vai recompilar os arquivos js e css.

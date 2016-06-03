@@ -42,6 +42,10 @@ module.exports = function(grunt) {
             }
         },
 		
+		 jshint: {
+			all: ['Gruntfile.js', 'src/js/*.js']
+		  },
+		
 		watch: {
 		  scripts: {
 			files: ['src/**/*.*'],
@@ -62,6 +66,8 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	
-    grunt.registerTask('build', ['uglify', 'concat','cssmin']);
+	grunt.loadNpmTasks('grunt-contrib-jshint');
+	
+    grunt.registerTask('build', ['jshint','uglify', 'concat','cssmin']);
 
 };
