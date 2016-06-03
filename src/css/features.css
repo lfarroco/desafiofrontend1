@@ -1,0 +1,47 @@
+
+#features{	
+	min-height: 200px;
+	background: #fff;
+	padding: 20px 0;  
+}
+
+#features .feature{
+	background: #d93732;
+	padding: 0;
+	margin-bottom: 10px;
+	display: inline-block;
+	clear: both;
+	position: relative;
+}
+
+#features .pic{
+	width: 25%;
+	float:left;	
+	margin-right: 30px;
+}
+
+#features .desc{
+	width: 65%;
+	float:left;
+	color: #fff;
+}
+
+#features a{
+	position: absolute;
+	right: 0;
+	top:0;
+	height: 100%;
+	background: #e94347;
+	width: 3%;
+}
+
+#features h2{	
+	margin: 10px 0 0 0;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #fff;
+}
+
+#features p{
+	font-size: 12px;
+}

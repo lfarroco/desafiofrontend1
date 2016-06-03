@@ -1,0 +1,64 @@
+
+html,body{
+	margin: 0;
+	padding: 0;
+	font-family: verdana, sans-serif;
+}
+
+.wrapper{
+	width: 980px;
+	max-width: 100%;
+	margin: 0 auto;
+	clear: both;
+}
+
+.row{
+	clear: both;	
+}
+
+.col{
+	float: left;
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+
+.twelve{
+	width: 100%;
+}
+
+.eight{
+	width: 75%;
+}
+.six{
+	width: 50%;	
+}
+
+.four{
+	width: 33%;
+}
+
+.three{
+	width: 25%;	
+}
+
+.two{
+	width: 20%;	
+}
+
+.one{
+	width: 8.33%;	
+}
+
+.float-left{	
+	float:left;
+}
+
+.float-right{
+	float: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}

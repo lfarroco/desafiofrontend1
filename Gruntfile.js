@@ -2,36 +2,66 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),				
-		less: {
-		  development: {
+		
+		uglify: {
+            options: {
+                mangle: false,
+                sourceMap: true,
+                drop_console: true
+            },
+            my_target: {
+                files: {
+                    'dist/scripts.js': ['src/js/*.js']
+                }
+            }
+        },
+		
+		concat: {
+            options: {
+                separator: ';\r\n',
+            },
+            dist: {
+                src: [
+                    'bower_components/jquery/dist/jquery.min.js',
+                    'dist/scripts.js'                    
+                ],
+                dest: 'dist/scripts.js',
+                nonull: true,
+            }
+        },
+		
+		cssmin: {
+            options: {
+                shorthandCompacting: false,
+                roundingPrecision: -1
+            },
+            target: {
+                files: {
+                    'dist/styles.css': ['src/css/*.css']
+                }
+            }
+        },
+		
+		watch: {
+		  scripts: {
+			files: ['src/**/*.*'],
+			tasks: ['build'],
 			options: {
-			  paths: ['src']
+			  spawn: false,
 			},
-			files: {
-			  'styles.css': 'styles/*.less'
-			}
 		  },
-		  production: {
-			options: {
-			  paths: [''],
-			  plugins: [
-				new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
-				new (require('less-plugin-clean-css'))(cleanCssOptions)
-			  ]			  
-			},
-			files: {
-			  'dist/styles.css': 'src/styles/*.less'
-			}
-		  }
-		}
+		},
+		
 	});
 
-    // Load plugins
-    grunt.loadNpmTasks('grunt-contrib-less');
-	
-	 grunt.registerTask('less', ['less']);
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    // Tasks
-    grunt.registerTask('build', ['less','concat', 'uglify', 'copy', 'cssmin']);
+    grunt.loadNpmTasks('grunt-contrib-concat');
+
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
+
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	
+    grunt.registerTask('build', ['uglify', 'concat','cssmin']);
 
 };

@@ -1,0 +1,29 @@
+
+header{
+	padding: 10px 0;
+	background: #d93732;
+}
+
+header img{
+	
+	display: block;
+	margin: 0 auto;
+	max-width: 200px;
+	
+}
+
+header nav ul{
+	list-style: none;	
+	margin: 0 auto;	
+	text-align: center;
+}
+
+header nav li{
+	display: inline;	
+	margin-right: 10px;	
+}
+
+header nav a{
+	color: #fff;
+	text-transform: uppercase;
+}
