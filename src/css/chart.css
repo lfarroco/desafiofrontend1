@@ -1,0 +1,15 @@
+#chart{
+	margin: 0 -15px
+}
+
+.chart{
+	background: #d93732;
+	padding: 10px 0;
+	text-align: center;
+	color: #fff;
+	transition: width 2s;
+	width: 0;
+}
+#chart .row{
+	min-height: 50px;
+}
