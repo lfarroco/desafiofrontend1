@@ -4,7 +4,6 @@
 	background: #fff;
 	padding: 20px 0;  
 }
-
 #features .feature{
 	background: #d93732;
 	padding: 0;
@@ -12,6 +11,11 @@
 	display: inline-block;
 	clear: both;
 	position: relative;
+}
+
+#features .sort{
+	color: #555;
+	font-size: 12px;	
 }
 
 #features .pic{
@@ -33,9 +37,19 @@
 	height: 100%;
 	background: #e94347;
 	width: 3%;
+	padding: 0 3px;
+	background: url('../img/arrow.png') no-repeat center;
+	background-color: #e94347;
 }
 
 #features h2{	
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #000;
+}
+
+#features h3{	
 	margin: 10px 0 0 0;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -44,4 +58,16 @@
 
 #features p{
 	font-size: 12px;
+}
+
+#features select{
+	padding: 3px;
+	background: #d93732;
+	color: #fff;
+	font-weight: bold;
+	border: none;
+}
+
+#feature-list{
+	margin-top: 10px;
 }

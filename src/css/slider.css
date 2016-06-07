@@ -23,12 +23,15 @@
 #slider .nav{
 	position: absolute;
 	top: 45%;
-	padding: 5px;
+	width: 19px;
+	height: 75px;	
 }
 
 #slider .nav.prev{
 	left: 0;
+	background: url('../img/arrow-flip.png');
 }
 #slider .nav.next{
+	background: url('../img/arrow.png');
 	right: 0;
 }

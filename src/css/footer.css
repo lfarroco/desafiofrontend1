@@ -1,5 +1,8 @@
-
 footer{
-	min-height: 200px;
-	background: #ccc;	
+	background: #e94347;
+	color: #fff;
+	padding: 15px 0;
+	font-weight: bold;
+	font-size: 12px;
+	margin-top: -5px;
 }

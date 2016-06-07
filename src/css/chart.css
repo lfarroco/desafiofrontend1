@@ -1,15 +1,27 @@
 #chart{
-	margin: 0 -15px
+	margin-bottom: 50px;
+	color: #d93732;
 }
-
-.chart{
+#chart .row{	
+	line-height: 30px;
+	margin: 0 -15px;
+	padding-bottom: 5px;
+}
+#chart .col.nine{
+	border-left: #ccc solid 2px;
+	padding-bottom: 3px;
+}
+#chart .bar{
 	background: #d93732;
-	padding: 10px 0;
 	text-align: center;
 	color: #fff;
 	transition: width 2s;
 	width: 0;
+	min-height: 30px;
 }
-#chart .row{
-	min-height: 50px;
+#most-read .desc{
+	font-size: 14px;
+	border-left: #ccc solid 2px;
+	color: #9d9797;
+	margin-top: 20px;
 }

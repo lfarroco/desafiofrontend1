@@ -6,7 +6,7 @@ html,body{
 }
 
 .wrapper{
-	width: 980px;
+	width: 990px;
 	max-width: 100%;
 	margin: 0 auto;
 	clear: both;
@@ -25,9 +25,14 @@ html,body{
 .twelve{
 	width: 100%;
 }
-
-.eight{
+.ten{
+	width: 83.33%;
+}
+.nine{
 	width: 75%;
+}
+.eight{
+	width: 66.66%;
 }
 .six{
 	width: 50%;	
@@ -52,13 +57,9 @@ html,body{
 .float-left{	
 	float:left;
 }
-
 .float-right{
 	float: right;
 }
-
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
+.spacer-bottom{
+	margin-bottom: 10px;
 }

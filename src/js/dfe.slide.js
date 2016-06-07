@@ -105,6 +105,9 @@
 				
 			},dfe.slide.timer);
 			
+			$('#slider .prev').click(function(){ dfe.slide.walk( -1)  });
+			$('#slider .next').click(function(){ dfe.slide.walk( 1 ) });
+			
 		});
 	};
 	

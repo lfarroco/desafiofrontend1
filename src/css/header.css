@@ -5,21 +5,20 @@ header{
 }
 
 header img{
-	
 	display: block;
-	margin: 0 auto;
-	max-width: 200px;
-	
+	margin: 10px auto;
+	max-width: 400px;	
 }
 
 header nav ul{
 	list-style: none;	
 	margin: 0 auto;	
 	text-align: center;
-	margin-top: 10px;
+	margin-top: 10px;	
 }
 
 header nav li{
+	position: relative;
 	display: inline;	
 	margin-right: 10px;	
 }
@@ -29,3 +28,49 @@ header nav a{
 	text-transform: uppercase;
 	text-decoration: none;
 }
+
+/* submenus */
+
+header ul ul{
+	display: none;
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	z-index: 2;
+	background: #e94347;
+	width: 173px;
+	margin-left: -30px;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+}
+	
+header li.has-child:after{
+	display: inline;
+	content: "▼";
+	color: #fff;
+}
+	
+header ul li:hover ul{
+	display:block;	
+}
+
+header ul ul li{
+	display:block;
+	margin: 0 2px;
+	padding: 5px 0;	
+}
+
+header ul ul li:after{
+	width: 100px;
+	height: 1px;
+	background: #fff;
+	margin: 0 auto;
+	display: block;
+    content: '';
+}
+
+ul ul li:last-child:after{
+  display: none;
+}
+

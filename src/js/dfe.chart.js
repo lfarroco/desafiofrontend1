@@ -30,10 +30,9 @@
 		chart.data[row].perc = (chart.data[row].views / chart.largest ) * 100;
 
 		$('#chart').append(
-'<div class="row"><div class="col two">'+chart.data[row].name+'</div><div class="col eight">'+
-'<div id="chart-'+row+'" class="chart">'+chart.data[row].views+'</div></div>'+
-'</div></div>'
-
+			'<div class="row"><div class="col two">'+chart.data[row].name+'</div><div class="col nine">'+
+			'<div id="chart-'+row+'" class="bar">'+chart.data[row].views+'</div></div>'+
+			'</div></div>'
 		);
 	
 	}
