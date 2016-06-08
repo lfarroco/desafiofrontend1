@@ -18,20 +18,43 @@
 
 #slider img.left { left: -100%; display: block; position:absolute; }
 #slider img.right {left: 100%; display: block;position:absolute;}
-#slider img.active,#slider img.active.left,#slider img.active.right { left: 0; display: block; }
+#slider img.active,#slider img.active.left,#slider img.active.right {	left: 0;
+	display: block;
+}
 
 #slider .nav{
 	position: absolute;
-	top: 45%;
+	top: 35%;
 	width: 19px;
-	height: 75px;	
+	height: 75px;
+	cursor: pointer;
 }
 
 #slider .nav.prev{
-	left: 0;
-	background: url('../img/arrow-flip.png');
+	left: 15px;
+	background: url('img/arrow-flip.png');
 }
 #slider .nav.next{
-	background: url('../img/arrow.png');
-	right: 0;
+	background: url('img/arrow.png'); 
+	right: 15px;
+}
+
+#slider .position{
+  width: 200px;
+  position: relative;
+  z-index: 3;
+  bottom: 25px;
+  left:50%;
+  margin-left: -20px;
+}
+#slider .position .pos{
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  float: left;
+  margin: 0 2px;
+  border-radius: 50%;
+}
+#slider .position .pos.active{
+  background: #d93732;
 }

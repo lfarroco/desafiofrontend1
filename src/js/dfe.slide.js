@@ -2,111 +2,141 @@
 
 	'use strict';
 
-	dfe.slide = {
+	var slide = {
 		
 		current: 0,
 		imgs: [],
 		walk: '',
 		isSliding: false,
-		timer: 3000
+		timer: 3000,
+		clicked: false
 		
 	};
 
-	dfe.slide.print = function(){
+	if(window.dfe)
+		window.slide = slide;
+	else
+		window.dfe = { slide: slide };
+
+	slide.print = function(){
 		
 		var output = '';
 		var first;
 		
-		dfe.slide.imgs.forEach(function(img){
+		slide.imgs.forEach(function(img,index){
 			
-			if(output.length < 1)
+			if(index < 1)
 				first = 'active';
 			else
 				first = '';
 			
 			output += '<img class="'+first+'" src="img/slide/'+img+'" />';
+
+			$('#slider .position').append( '<div class="pos '+first+'"></div>' );
 			
 		});
 		
 		$('#slider .items').html( output );
 		
-		dfe.slide.items = $('#slider .items img');
+		slide.items = $('#slider .items img');
 		
 	};
 
-	dfe.slide.walk = function(mod){
+	slide.walk = function(mod){
 		
-		if( dfe.slide.isSliding )
+		if( slide.isSliding )
 			return;
 		
-		dfe.slide.isSliding = true;
+		slide.isSliding = true;
 		
 		var target, coming, going;
 		
-		coming = mod ? 'right' : 'left';
-		going = mod ? 'left' : 'right';
+		coming = mod > 0 ? 'right' : 'left';
+		going = mod > 0 ? 'left' : 'right';
 		
 		if( coming == 'right'){
 			
-			if(dfe.slide.current == dfe.slide.length-1){
+			if(slide.current == slide.length-1){
 				target = 0;
-				dfe.slide.current = 0;
+				slide.current = 0;
 			}else{
-				target = dfe.slide.current+1;	
-				dfe.slide.current++;
+				target = slide.current+1;	
+				slide.current++;
 			}
 			
 		}
 		
 		if( coming == 'left'){
 			
-			if(dfe.slide.current === 0){
-				target = dfe.slide.length-1;
-				dfe.slide.current = dfe.slide.length-1;
+			if(slide.current === 0){
+				target = slide.length-1;
+				slide.current = slide.length-1;
 			}else{
-				target = dfe.slide.current-1;	
-				dfe.slide.current--;
+				target = slide.current-1;	
+				slide.current--;
 			}
 			
 			
 		}
 		
-		dfe.slide.items.eq( target ).addClass( coming );
+		slide.items.eq( target ).addClass( coming );
+
+		$('#slider .position .pos').removeClass('active');
+		$('#slider .position .pos').eq( slide.current ).addClass('active');
 		
 		setTimeout(function( target ){
 			
-			$('.active').addClass( going ).removeClass('active');
-			dfe.slide.items.eq( target ).addClass('active').removeClass( coming );
+			$('#slider img.active').addClass( going ).removeClass('active');
+			slide.items.eq( target ).addClass('active').removeClass( coming );
 			
 			setTimeout(function(){
 				
 				$('.'+going).removeClass( going );
 				
-				dfe.slide.isSliding = false;
-				
-			},dfe.slide.timer+20);
+			},slide.timer+20);
+
+			slide.isSliding = false;
 			
 		},20, target);	
 		
 	};
 
-	dfe.slide.start = function(){
+	slide.start = function(){
 			
 		$.getJSON('json/slide.json',function(res){
 			
-			dfe.slide.imgs = res[0].imagens;
-			dfe.slide.length = dfe.slide.imgs.length;	
+			slide.imgs = res[0].imagens;
+			slide.length = slide.imgs.length;	
 			
-			dfe.slide.print();
+			slide.print();
 			
 			setInterval(function(){
 				
-				dfe.slide.walk(1);
+				if(!slide.clicked)
+					slide.walk(1);
 				
-			},dfe.slide.timer);
+			},slide.timer);
 			
-			$('#slider .prev').click(function(){ dfe.slide.walk( -1)  });
-			$('#slider .next').click(function(){ dfe.slide.walk( 1 ) });
+			$('#slider .prev').click(function(){
+				slide.walk( -1);
+				slide.clicked = true;
+				setTimeout(function(){
+					
+					slide.clicked = false;
+
+				},2000);
+			});
+			$('#slider .next').click(function(){
+				slide.walk( 1 );
+				
+				slide.clicked = true;
+				setTimeout(function(){
+					
+					slide.clicked = false;
+
+				},2000);
+			});
+
 			
 		});
 	};

@@ -3,20 +3,20 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),				
 		
-		uglify: {
+	uglify: {
             options: {
                 mangle: false,
                 sourceMap: true,
                 drop_console: true
             },
-            my_target: {
+            my_target: { 
                 files: {
-                    'dist/scripts.js': ['src/js/*.js']
+                    'dist/scripts.js': ['src/js/dfe.core.js','src/js/*.js']
                 }
             }
         },
 		
-		concat: {
+	concat: {
             options: {
                 separator: ';\r\n',
             },
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
             }
         },
 		
-		cssmin: {
+	cssmin: {
             options: {
                 shorthandCompacting: false,
                 roundingPrecision: -1
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
             }
         },
 		
-		 jshint: {
+	 jshint: {
 			all: ['Gruntfile.js', 'src/js/*.js']
 		  },
 		
@@ -54,9 +54,9 @@ module.exports = function(grunt) {
 			  spawn: false,
 			},
 		  },
-		},
-		
-	});
+	},
+	
+    });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
 

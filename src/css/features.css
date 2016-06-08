@@ -36,9 +36,9 @@
 	top:0;
 	height: 100%;
 	background: #e94347;
-	width: 3%;
+	width: 4%;
 	padding: 0 3px;
-	background: url('../img/arrow.png') no-repeat center;
+	background: url('img/arrow.png') no-repeat center;
 	background-color: #e94347;
 }
 

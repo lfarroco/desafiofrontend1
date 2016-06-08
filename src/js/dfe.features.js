@@ -2,16 +2,27 @@
 
 	'use strict';
 
-	dfe.features = {};
+	var features = {};
 
-	dfe.features.printEditoria = function(index){
+	if(window.dfe)
+		window.features = features;
+	else
+		window.dfe = { features: features };
+	
+
+	features.printEditoria = function(index){
 		
 		var news = [];
 		var out = '';
 
+		if(!index)
+			index = 0;
+
+		console.log('....',index);
+
 		//se as datas das noticias ainda não foram geradas
-		//if(typeof dfe.features.editorias[ index ]["Notícias"][0]["Data de publicação"] === 'undefined')
-		dfe.features.editorias[ index ]["Notícias"].forEach(function(noticia){
+		//if(typeof features.editorias[ index ]["Notícias"][0]["Data de publicação"] === 'undefined')
+		features.editorias[ index ]["Notícias"].forEach(function(noticia){
 			
 			var brDate = noticia["Data de publicação"];
 			
@@ -21,27 +32,28 @@
 			
 		});
 		
-		//sort by date
-		news = dfe.features.editorias[ index ]["Notícias"].sort(function(a,b){
+		if($('#data').val() == 'data'){
+			//sort by date ( slice(0) to clone array! )
+			news = features.editorias[ index ]["Notícias"].slice(0).sort(function(a,b){
 			
-			console.log(a.date-b.date);
-			return a.date-b.date;
+				console.log(a.date-b.date);
+				return a.date-b.date;
 			
-		});
+			});
+		}
 		
-		console.log( news );
-		
-		//sort by title -->http://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
-		news = dfe.features.editorias[ index ]["Notícias"].sort(function(a, b){
-		 var nameA=a["Título"].toLowerCase(), nameB=b["Título"].toLowerCase();
-		 if (nameA < nameB) //sort string ascending
-		  return -1;
-		 if (nameA > nameB)
-		  return 1;
-		 return 0; //default return value (no sorting)
-		});
-		
-		console.log(news);
+		if($('#data').val() == 'titulo'){
+			//sort by title -->http://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
+			news = features.editorias[ index ]["Notícias"].slice(0).sort(function(a, b){
+			 var nameA=a["Título"].toLowerCase(), nameB=b["Título"].toLowerCase();
+			 if (nameA < nameB) //sort string ascending
+			  return -1;
+			 if (nameA > nameB)
+			  return 1;
+			 return 0; //default return value (no sorting)
+			});
+
+		}
 			
 		news.forEach(function(noticia){
 			
@@ -65,23 +77,23 @@
 		
 	};
 	
-	dfe.features.start = function(){
+	features.start = function(){
 		
 		$.getJSON('json/noticias.json',function(res){
 			
-			dfe.features.editorias = res[0].Editorias;
+			features.editorias = res[0].Editorias;
 			
 			//imprimir primeira editoria da lista
-			dfe.features.printEditoria(0);
+			features.printEditoria(0);
 			
-			//povoar select
+			//povoar select 
 			
 			var options = '<option value="" disabled selected>EDITORIAS</option>';
 			var index = 0;
 			
-			dfe.features.editorias.forEach(function(editoria){
+			features.editorias.forEach(function(editoria){
 				
-				var name = editoria.Editoria;
+				var name = editoria.Editoria; 
 				
 				options += '<option value="'+index+'">'+name+'</option>';
 				
@@ -91,9 +103,9 @@
 			
 			$('#editorias').html( options );
 			
-			$('#editorias').change( function(){
+			$('#editorias,#data').change( function(){
 				
-				dfe.features.printEditoria( $(this).val() );				
+				features.printEditoria( $('#editorias').val() );				
 				
 			});
 			
@@ -101,6 +113,6 @@
 		
 	};
 	
-	dfe.features.sort = function(){}
+	
 	
 })();

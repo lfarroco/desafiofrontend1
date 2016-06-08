@@ -9,6 +9,11 @@
 
 	};
 
+	if(window.dfe)
+		window.dfe.chart = chart;
+	else
+		window.dfe = { chart: chart };
+
 	chart.data.politica= {views:600,name:"POLÍTICA",perc:0};
 	chart.data.economia = {views:500,name:"ECONOMIA",perc:0};
 	chart.data.ciencia = {views:400,name:"CIÊNCIA",perc:0};
@@ -18,10 +23,10 @@
 
 	chart.largest = 0;
 
-	for(var row in chart.data){
+	for(var line in chart.data){
 
-		if(chart.data[row].views > chart.largest)
-			chart.largest = chart.data[row].views;
+		if(chart.data[line].views > chart.largest)
+			chart.largest = chart.data[line].views;
 	
 	}
 
@@ -47,9 +52,5 @@
 
 	},2000);
 
-	
-
-
-	dfe.chart = chart;
 	
 })();
