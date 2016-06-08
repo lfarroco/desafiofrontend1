@@ -1,5 +1,5 @@
 # Teste - Front-End Leonardo Farroco
-Projeto elaborado com o mínimo de ferramentas, buscando um código mais próximo do *vanilla*.
+Teste para a InfoGlobo - *no frameworks allowed*.
 
 ## Visualização
 
