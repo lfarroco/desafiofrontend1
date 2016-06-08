@@ -14,7 +14,7 @@
 	};
 
 	if(window.dfe)
-		window.slide = slide;
+		window.dfe.slide = slide;
 	else
 		window.dfe = { slide: slide };
 
@@ -22,7 +22,7 @@
 		
 		var output = '';
 		var first;
-		
+
 		slide.imgs.forEach(function(img,index){
 			
 			if(index < 1)

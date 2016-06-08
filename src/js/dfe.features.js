@@ -5,7 +5,7 @@
 	var features = {};
 
 	if(window.dfe)
-		window.features = features;
+		window.dfe.features = features;
 	else
 		window.dfe = { features: features };
 	
